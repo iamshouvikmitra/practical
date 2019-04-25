@@ -1,0 +1,44 @@
+using System;
+
+namespace ProgramCall
+{
+    class Test2
+    {
+
+        int A, B;
+         public Test2(int X, int Y)
+        {
+            A = X;
+            B = Y;
+        }
+
+        //Copy Constructor
+        public Test2(Test2 T)
+        {
+            A = T.A;
+
+            B = T.B;
+        }
+         public void Print()
+        {
+
+            Console.WriteLine("A  =  {0}\tB  =  {1}", A, B);
+        }
+      }
+
+     class CopyConstructor
+    {
+        static void Main()
+        {
+          Test2 T2 = new Test2(80, 90);
+
+            //Invoking copy constructor
+            Test2 T3 = new Test2(T2); 
+            
+            T2.Print();
+            T3.Print();
+
+            Console.ReadLine();
+        }
+    }
+}

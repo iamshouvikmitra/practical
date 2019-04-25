@@ -1,0 +1,23 @@
+using System;
+
+class Example
+{
+    public static void Main() 
+    {
+       string s1 = "The quick brown fox jumps over the lazy dog";
+       string s2 = "fox";
+       bool b = s1.Contains(s2);
+       Console.WriteLine("'{0}' is in the string '{1}': {2}",
+                          s2, s1, b);
+                          
+       s1 = s1.Insert(s1.IndexOf("brown"), "dark");
+       Console.WriteLine(s1);
+       
+       Console.WriteLine("{0}", s1.Remove(19)); 
+       Console.WriteLine("{0}", s1.Remove(3, 16));
+       
+       Console.WriteLine("{0}", s1.Replace(' ', ','));
+       
+       Console.WriteLine("{0}",s2.ToUpper());
+       }
+    }

@@ -1,0 +1,27 @@
+using System;
+using red_area;
+using red_area.blue_area;
+
+namespace red_area {
+   class red {
+      public void area() {
+Console.WriteLine("In red area");
+      }
+   }
+   namespace blue_area {
+      class blue {
+         public void area() {
+            Console.WriteLine("In blue area");
+         }
+      }
+   }   
+}
+class TestClass {
+   static void Main(string[] args) {
+      red rd = new red();
+      blue bl = new blue();
+      rd.area();
+      bl.area();
+      Console.ReadKey();
+   }
+}

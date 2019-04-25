@@ -1,0 +1,66 @@
+// Singlecast delegate:
+using System;
+//1. Declaration
+public delegate int MyDelagate(int a, int b); //delegates having same signature as method 
+ 
+public class Example
+{
+ // methods to be assigned and called by delegate
+ public int Sum(int a, int b)
+ {
+ return a + b;
+ }
+ 
+ public int Difference(int a, int b)
+ {
+ return a - b;
+ }
+ }
+ class Program
+ {
+ static void Main()
+ {
+ Example obj = new Example();
+ 
+ // 2. Instantiation : As a single cast delegate
+ MyDelagate sum = new MyDelagate(obj.Sum); 
+ MyDelagate diff = new MyDelagate(obj.Difference);
+ 
+ // 3.Invocation
+ Console.WriteLine("Sum of two integer is = " + sum(10, 20)); 
+ Console.WriteLine("Difference of two integer is = " + diff(20, 10));
+ }
+ }
+
+
+
+ // Multicast delegate:
+using System;
+//1. Declaration
+public delegate void MyDelagate(int a, int b); 
+public class Example
+{
+ // methods to be assigned and called by delegate
+ public void Sum(int a, int b)
+ {
+ Console.WriteLine("Sum of integers is = " + (a + b));
+ }
+ 
+ public void Difference(int a, int b)
+ {
+ Console.WriteLine("Difference of integer is = " + (a - b));
+ }
+}
+class Program
+{
+ static void Main()
+ {
+ Example obj = new Example();
+ // 2. Instantiation
+ MyDelagate multicastdel = new MyDelagate(obj.Sum); 
+ multicastdel += new MyDelagate(obj.Difference);
+ 
+ // 3. Invocation
+ multicastdel (50, 20);
+ }
+}

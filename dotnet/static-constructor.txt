@@ -1,0 +1,29 @@
+using System;
+namespace ProgramCall
+{
+    class Test3
+    {
+
+        public Test3()
+        {
+        Console.WriteLine("Instance  Constructor");
+        }
+
+        static Test3()
+        {
+            Console.WriteLine("Static  Constructor");
+        }
+    }
+    class StaticConstructor
+    {
+        static void Main()
+        {
+            //Static Constructor and instance constructor, both are invoked for first instance.
+            Test3 T1 = new Test3(); 
+
+            //Only instance constructor is invoked.
+            Test3 T2 = new Test3(); 
+           Console.ReadLine();
+        }
+    }
+}
